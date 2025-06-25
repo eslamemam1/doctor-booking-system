@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
   { path: '', component: HomePage },
-  { path: 'appointment', component: AppointmentForm, canActivate: [authGuard] },
+  { path: 'appointment', component: AppointmentForm },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
