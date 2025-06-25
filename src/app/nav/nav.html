@@ -1,0 +1,17 @@
+<nav
+  class="bg-white/70 backdrop-blur-sm p-4 text-gray-900 fixed top-0 w-full z-50 shadow-md"
+>
+  <div
+    class="mx-auto container m-auto flex flex-col md:flex-row md:justify-end gap-4 text-sm md:text-base tajawal-extralight text-end"
+  >
+    <a routerLink="/appointment" routerLinkActive="font-bold">حجز موعد</a>
+    <a routerLink="/dashboard" routerLinkActive="font-bold">لوحة التحكم</a>
+    <a routerLink="/login" routerLinkActive="font-bold">تسجيل الدخول</a>
+    <a
+      routerLink="/"
+      routerLinkActive="font-bold"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >الصفحة الرئيسية</a
+    >
+  </div>
+</nav>

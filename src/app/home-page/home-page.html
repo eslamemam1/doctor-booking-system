@@ -1,1 +1,29 @@
-<p>home-page works!</p>
+<!-- الغلاف العام -->
+<div
+  class="min-h-screen relative bg-white pt-[30px]"
+  style="
+    background-image: url('clinc2.jpg');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+  <!-- ✅ بانر ترحيبي -->
+  <section
+    class="text-center min-h-screen flex justify-center items-center flex-col py-12 px-4 relative z-20"
+  >
+    <h2 class="text-3xl font-extrabold text-white mb-4">
+      مرحبًا بكم في عيادة الدكتور أحمد لطب الأسنان
+    </h2>
+    <p class="text-white text-lg mb-6">
+      احجز موعدك بسهولة مع طبيب متخصص في علاج وتجميل الأسنان
+    </p>
+
+    <a
+      routerLink="/appointment"
+      class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-lg font-semibold transition"
+    >
+      احجز موعدك الآن
+    </a>
+  </section>
+</div>

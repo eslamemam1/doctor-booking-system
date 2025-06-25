@@ -36,7 +36,6 @@ export class Login {
       next: (response) => {
         console.log('Login successful', response);
         localStorage.setItem('token', response.data.token);
-        //this.router.navigate(['/dashboard']);
 
         // Example redirect based on email
         if (this.loginForm.value.EmailId === 'eslamemam@gmail.com') {

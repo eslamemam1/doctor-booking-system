@@ -1,81 +1,95 @@
 <div
-  class="min-h-screen flex items-center justify-center bg-gradient-to-tr from-blue-50 to-blue-100 px-4"
+  class="relative min-h-screen flex items-center justify-center px-4 tajawal-extralight"
+  style="
+    background-image: url('doctor-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  "
 >
+  <!-- طبقة غامقة شفافة فوق الخلفية -->
+  <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+
+  <!-- صندوق تسجيل الدخول -->
   <div
-    class="w-full max-w-md bg-white shadow-2xl rounded-xl p-8 border border-blue-200"
+    class="relative z-10 w-full max-w-md bg-white/80 shadow-2xl rounded-xl p-8 border border-blue-200 backdrop-blur-sm"
   >
     <!-- شعار -->
     <div class="flex flex-col items-center mb-6">
       <img src="medical-report.png" alt="Doctor Logo" class="w-16 h-16 mb-2" />
-      <h1 class="text-2xl font-extrabold text-blue-700">نظام حجز العيادة</h1>
+      <h1 class="text-2xl font-extrabold text-[#133E85]">نظام حجز العيادة</h1>
       <p class="text-sm text-gray-500 mt-1">تسجيل الدخول إلى حساب الطبيب</p>
     </div>
 
     <!-- نموذج تسجيل الدخول -->
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-5">
+      <!-- البريد الإلكتروني -->
       <div>
-        <label for="email" class="block text-sm font-medium text-gray-700 mb-1"
-          >البريد الإلكتروني</label
-        >
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+          البريد الإلكتروني
+        </label>
         <input
           type="email"
           id="email"
           formControlName="EmailId"
           placeholder="doctor@example.com"
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#133E85]"
         />
         <div
-          *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          *ngIf="loginForm.get('EmailId')?.invalid && loginForm.get('EmailId')?.touched"
           class="text-red-500 text-xs mt-1"
         >
           البريد الإلكتروني مطلوب
         </div>
       </div>
 
+      <!-- كلمة المرور -->
       <div>
         <label
           for="password"
           class="block text-sm font-medium text-gray-700 mb-1"
-          >كلمة المرور</label
         >
+          كلمة المرور
+        </label>
         <input
           type="password"
           id="password"
           formControlName="Password"
           placeholder="••••••••"
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#133E85]"
         />
         <div
-          *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          *ngIf="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched"
           class="text-red-500 text-xs mt-1"
         >
           كلمة المرور مطلوبة
         </div>
         <div class="text-right mt-2">
-          <a href="#" class="text-sm text-blue-600 hover:underline"
-            >نسيت كلمة المرور؟</a
-          >
+          <a href="#" class="text-sm text-[#133E85] hover:underline">
+            نسيت كلمة المرور؟
+          </a>
         </div>
       </div>
 
+      <!-- زر الدخول -->
       <button
         type="submit"
-        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+        class="w-full bg-[#133E85] text-white font-semibold py-2 rounded-lg hover:bg-blue-800 transition duration-200"
       >
         دخول الطبيب
       </button>
 
+      <!-- رسالة الخطأ -->
       <div *ngIf="error" class="text-red-600 text-center text-sm mt-3">
         {{ error }}
       </div>
     </form>
 
-    <!-- رابط تسجيل جديد -->
+    <!-- رابط إنشاء حساب -->
     <p class="text-center text-sm text-gray-600 mt-6">
       لا تملك حسابًا؟
-      <a routerLink="/register" class="text-blue-600 hover:underline"
-        >سجل الآن كطبيب</a
-      >
+      <a routerLink="/register" class="text-[#133E85] hover:underline">
+        سجل الآن كطبيب
+      </a>
     </p>
   </div>
 </div>

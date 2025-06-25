@@ -1,72 +1,85 @@
-<div class="min-h-screen bg-gray-100 p-6">
+<div class="min-h-screen pt-[80px] bg-gray-100 p-6">
   <!-- ترحيب -->
-  <h1 class="text-2xl font-bold text-gray-800 mb-6">مرحبًا دكتور 👨‍⚕️</h1>
 
-  <!-- كروت إحصائية -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
-      <p class="text-sm text-gray-500">إجمالي المواعيد</p>
-      <h2 class="text-2xl font-bold text-blue-600">120</h2>
-    </div>
-
-    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
-      <p class="text-sm text-gray-500">مواعيد اليوم</p>
-      <h2 class="text-2xl font-bold text-green-600">8</h2>
-    </div>
-
-    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-yellow-500">
-      <p class="text-sm text-gray-500">مراجعين جدد</p>
-      <h2 class="text-2xl font-bold text-yellow-600">15</h2>
-    </div>
-
-    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
-      <p class="text-sm text-gray-500">مواعيد ملغاة</p>
-      <h2 class="text-2xl font-bold text-red-600">3</h2>
-    </div>
-  </div>
-
-  <!-- جدول آخر المواعيد -->
-  <div class="bg-white p-6 rounded-lg shadow">
-    <div class="flex justify-between items-center mb-4">
-      <h3 class="text-lg font-bold text-gray-700">آخر المواعيد</h3>
-      <a
-        routerLink="/appointments"
-        class="text-blue-600 hover:underline text-sm"
-        >عرض الكل</a
+  <div class="container m-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">مرحبًا دكتور 👨‍⚕️</h1>
+      <button
+        (click)="logout()"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow"
       >
+        تسجيل الخروج
+      </button>
     </div>
 
-    <div class="overflow-x-auto">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead>
-          <tr class="bg-gray-50 text-left text-sm font-semibold text-gray-600">
-            <th class="py-2 px-4">المريض</th>
-            <th class="py-2 px-4">التاريخ</th>
-            <th class="py-2 px-4">الوقت</th>
-            <th class="py-2 px-4">الحالة</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
-          <tr>
-            <td class="py-2 px-4">أحمد علي</td>
-            <td class="py-2 px-4">2025-06-25</td>
-            <td class="py-2 px-4">10:30 صباحًا</td>
-            <td class="py-2 px-4 text-green-600 font-medium">مقبول</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4">سارة مصطفى</td>
-            <td class="py-2 px-4">2025-06-25</td>
-            <td class="py-2 px-4">12:00 ظهرًا</td>
-            <td class="py-2 px-4 text-yellow-600 font-medium">معلق</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4">محمد عبد الله</td>
-            <td class="py-2 px-4">2025-06-25</td>
-            <td class="py-2 px-4">2:00 مساءً</td>
-            <td class="py-2 px-4 text-red-600 font-medium">مرفوض</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- كروت إحصائية -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+        <p class="text-sm text-gray-500">إجمالي المواعيد</p>
+        <h2 class="text-2xl font-bold text-blue-600">120</h2>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+        <p class="text-sm text-gray-500">مواعيد اليوم</p>
+        <h2 class="text-2xl font-bold text-green-600">8</h2>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-yellow-500">
+        <p class="text-sm text-gray-500">مراجعين جدد</p>
+        <h2 class="text-2xl font-bold text-yellow-600">15</h2>
+      </div>
+
+      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+        <p class="text-sm text-gray-500">مواعيد ملغاة</p>
+        <h2 class="text-2xl font-bold text-red-600">3</h2>
+      </div>
+    </div>
+
+    <!-- جدول آخر المواعيد -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold text-gray-700">آخر المواعيد</h3>
+        <a
+          routerLink="/appointments"
+          class="text-blue-600 hover:underline text-sm"
+          >عرض الكل</a
+        >
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr
+              class="bg-gray-50 text-left text-sm font-semibold text-gray-600"
+            >
+              <th class="py-2 px-4">المريض</th>
+              <th class="py-2 px-4">التاريخ</th>
+              <th class="py-2 px-4">الوقت</th>
+              <th class="py-2 px-4">الحالة</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
+            <tr>
+              <td class="py-2 px-4">أحمد علي</td>
+              <td class="py-2 px-4">2025-06-25</td>
+              <td class="py-2 px-4">10:30 صباحًا</td>
+              <td class="py-2 px-4 text-green-600 font-medium">مقبول</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">سارة مصطفى</td>
+              <td class="py-2 px-4">2025-06-25</td>
+              <td class="py-2 px-4">12:00 ظهرًا</td>
+              <td class="py-2 px-4 text-yellow-600 font-medium">معلق</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">محمد عبد الله</td>
+              <td class="py-2 px-4">2025-06-25</td>
+              <td class="py-2 px-4">2:00 مساءً</td>
+              <td class="py-2 px-4 text-red-600 font-medium">مرفوض</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
