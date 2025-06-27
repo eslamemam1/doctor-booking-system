@@ -1,4 +1,4 @@
-<!-- الغلاف العام -->
+<!-- ✅ الغلاف الرئيسي مع بانر ترحيبي -->
 <div
   class="min-h-screen relative bg-white pt-[30px]"
   style="
@@ -8,22 +8,206 @@
   "
 >
   <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-  <!-- ✅ بانر ترحيبي -->
+
   <section
     class="text-center min-h-screen flex justify-center items-center flex-col py-12 px-4 relative z-20"
   >
     <h2 class="text-3xl font-extrabold text-white mb-4">
-      مرحبًا بكم في عيادة الدكتور أحمد لطب الأسنان
+      مرحبًا بكم في عيادة الدكتور أحمد.
     </h2>
     <p class="text-white text-lg mb-6">
-      احجز موعدك بسهولة مع طبيب متخصص في علاج وتجميل الأسنان
+      احجز موعدك بسهولة مع دكتور مختص في علاج الأسنان.
     </p>
-
     <a
       routerLink="/appointment"
-      class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-lg font-semibold transition"
+      class="inline-block bg-[var(--secondary)] text-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#133e87] text-lg font-semibold transition"
     >
       احجز موعدك الآن
     </a>
   </section>
 </div>
+
+<!-- ✅ الخدمات -->
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-[var(--primary)]"
+>
+  <div
+    class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition"
+  >
+    <img src="tooth.png" alt="حشوات الأسنان" class="w-16 h-16 mx-auto mb-4" />
+    <h3 class="text-lg font-bold text-gray-800">حشوات الأسنان</h3>
+  </div>
+  <div
+    class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition"
+  >
+    <img src="tooth2.png" alt="تقويم الأسنان" class="w-16 h-16 mx-auto mb-4" />
+    <h3 class="text-lg font-bold text-gray-800">تقويم الأسنان</h3>
+  </div>
+  <div
+    class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition"
+  >
+    <img src="tooth3.png" alt="تنظيف الأسنان" class="w-16 h-16 mx-auto mb-4" />
+    <h3 class="text-lg font-bold text-gray-800">تنظيف الأسنان</h3>
+  </div>
+</div>
+
+<!-- ✅ قالوا عنا -->
+<section class="py-16 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-[var(--secondary)] mb-10">قالوا عنا</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-right"
+      >
+        <p class="text-gray-700 italic mb-4">
+          "الدكتور محترم جدًا وتشخيصه دقيق، والحجز كان سهل وسريع من خلال
+          الموقع."
+        </p>
+        <div class="text-sm text-[var(--secondary)] font-bold">
+          — أحمد سليمان
+        </div>
+      </div>
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-right"
+      >
+        <p class="text-gray-700 italic mb-4">
+          "العيادة منظمة جدًا، والمواعيد مضبوطة، والتواصل ممتاز. أنصح الجميع."
+        </p>
+        <div class="text-sm text-[var(--secondary)] font-bold">
+          — فاطمة عبد الله
+        </div>
+      </div>
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-right"
+      >
+        <p class="text-gray-700 italic mb-4">
+          "كنت أعاني من ألم في أسناني، والدكتور شخّص الحالة فورًا وتم العلاج بكل
+          احترافية."
+        </p>
+        <div class="text-sm text-[var(--secondary)] font-bold">— محمد حسين</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ الإحصائيات -->
+<section
+  #statsSection
+  class="py-16 bg-[var(--primary)] text-center text-[var(--secondary)]"
+>
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-10">إحصائياتنا</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="text-5xl font-extrabold mb-2">{{ patientCount }}+</div>
+        <p class="text-lg font-medium">مريض تم خدمتهم</p>
+      </div>
+      <div>
+        <div class="text-5xl font-extrabold mb-2">{{ doctorCount }}+</div>
+        <p class="text-lg font-medium">عدد الأطباء</p>
+      </div>
+      <div>
+        <div class="text-5xl font-extrabold mb-2">{{ clinicCount }}+</div>
+        <p class="text-lg font-medium">عدد العيادات</p>
+      </div>
+      <div>
+        <div class="text-5xl font-extrabold mb-2">{{ experienceCount }}+</div>
+        <p class="text-lg font-medium">سنوات الخبرة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ العيادات -->
+<section class="py-16 bg-white text-right">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-[var(--secondary)] mb-8 text-center">
+      العيادات
+    </h2>
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img
+          src="clincLocation1.jpg"
+          alt="عيادة المهندسين"
+          class="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          عيادة المهندسين
+        </h3>
+        <p class="text-gray-600 mb-4">
+          تقع في قلب المهندسين، ومجهزة بأحدث الأجهزة لعلاج وتجميل الأسنان.
+        </p>
+        <p class="text-sm text-gray-500">ساعات العمل: 10 ص - 8 م</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img
+          src="clincLocation2.jpg"
+          alt="عيادة مدينة نصر"
+          class="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          عيادة مدينة نصر
+        </h3>
+        <p class="text-gray-600 mb-4">
+          نخبة من الأطباء المتخصصين في مختلف التخصصات داخل العيادة.
+        </p>
+        <p class="text-sm text-gray-500">ساعات العمل: 11 ص - 9 م</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img
+          src="clincLocation3.jpg"
+          alt="عيادة الشيخ زايد"
+          class="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          عيادة الشيخ زايد
+        </h3>
+        <p class="text-gray-600 mb-4">
+          بيئة مريحة للمرضى مع أحدث أدوات التعقيم وخدمة عملاء مميزة.
+        </p>
+        <p class="text-sm text-gray-500">ساعات العمل: 9 ص - 7 م</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ الفوتر -->
+<footer class="bg-[var(--secondary)] text-white py-10 mt-16">
+  <div
+    class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right"
+  >
+    <div>
+      <h3 class="text-lg font-bold mb-3">عن العيادة</h3>
+      <p class="text-sm text-[var(--primary)] leading-6">
+        نقدم لك أفضل خدمات طب الأسنان باستخدام أحدث التقنيات الطبية واهتمام خاص
+        براحتك.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold mb-3">روابط سريعة</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a routerLink="/" class="hover:text-gray-400">الصفحة الرئيسية</a>
+        </li>
+        <li>
+          <a routerLink="/appointment" class="hover:text-gray-400">حجز موعد</a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" class="hover:text-gray-400">لوحة التحكم</a>
+        </li>
+        <li>
+          <a routerLink="/login" class="hover:text-gray-400">تسجيل الدخول</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold mb-3">تواصل معنا</h3>
+      <p class="text-sm text-[var(--primary)]">📍 القاهرة، مصر</p>
+      <p class="text-sm text-[var(--primary)]">📞 01234567890</p>
+      <p class="text-sm text-[var(--primary)]">✉️ ahmed&#64;gmail.com</p>
+    </div>
+  </div>
+  <div class="mt-10 text-center text-[var(--primary)] text-sm">
+    © {{ currentYear }} عيادة الدكتور - جميع الحقوق محفوظة
+  </div>
+</footer>

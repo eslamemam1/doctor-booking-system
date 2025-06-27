@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './nav.html',
   styleUrl: './nav.css',
 })
-export class Nav {}
+export class Nav {
+  menuOpen = false;
+}

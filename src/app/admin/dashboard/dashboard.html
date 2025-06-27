@@ -12,29 +12,6 @@
       </button>
     </div>
 
-    <!-- كروت إحصائية -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
-        <p class="text-sm text-gray-500">إجمالي المواعيد</p>
-        <h2 class="text-2xl font-bold text-blue-600">120</h2>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
-        <p class="text-sm text-gray-500">مواعيد اليوم</p>
-        <h2 class="text-2xl font-bold text-green-600">8</h2>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-yellow-500">
-        <p class="text-sm text-gray-500">مراجعين جدد</p>
-        <h2 class="text-2xl font-bold text-yellow-600">15</h2>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
-        <p class="text-sm text-gray-500">مواعيد ملغاة</p>
-        <h2 class="text-2xl font-bold text-red-600">3</h2>
-      </div>
-    </div>
-
     <!-- جدول آخر المواعيد -->
     <div class="bg-white p-6 rounded-lg shadow">
       <div class="flex justify-between items-center mb-4">
@@ -55,27 +32,22 @@
               <th class="py-2 px-4">المريض</th>
               <th class="py-2 px-4">التاريخ</th>
               <th class="py-2 px-4">الوقت</th>
-              <th class="py-2 px-4">الحالة</th>
+              <th class="py-2 px-4">button</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
-            <tr>
-              <td class="py-2 px-4">أحمد علي</td>
-              <td class="py-2 px-4">2025-06-25</td>
-              <td class="py-2 px-4">10:30 صباحًا</td>
-              <td class="py-2 px-4 text-green-600 font-medium">مقبول</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4">سارة مصطفى</td>
-              <td class="py-2 px-4">2025-06-25</td>
-              <td class="py-2 px-4">12:00 ظهرًا</td>
-              <td class="py-2 px-4 text-yellow-600 font-medium">معلق</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4">محمد عبد الله</td>
-              <td class="py-2 px-4">2025-06-25</td>
-              <td class="py-2 px-4">2:00 مساءً</td>
-              <td class="py-2 px-4 text-red-600 font-medium">مرفوض</td>
+            <tr *ngFor="let item of data">
+              <td class="py-2 px-4">{{item.patientName}}</td>
+              <td class="py-2 px-4">{{item.appointmentDate}}</td>
+              <td class="py-2 px-4">{{item.appointmentTime}}</td>
+              <td class="py-2 px-4">
+                <button
+                  class="hover:bg-red-600 hover:text-white bg-red-500 text-white px-3 py-1 rounded"
+                  (click)="delet(item)"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
