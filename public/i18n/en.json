@@ -1,0 +1,126 @@
+{
+  "home-page": {
+    "title": "Welcome to Dr. Ahmed's Dental Clinic",
+    "description": "We provide a premium dental experience with top doctors and modern equipment. Book your appointment now with ease.",
+    "button": "Book Your Appointment"
+  },
+  "services": {
+    "title": "Our Services",
+    "service1": "Cosmetic Dental Fillings",
+    "service2": "Clear Braces",
+    "service3": "Professional Teeth Cleaning"
+  },
+  "about": {
+    "title": "What Our Patients Say",
+    "description1": "The doctor is highly professional with an accurate diagnosis, and booking through the website was smooth.",
+    "name1": "Ahmed Suleiman",
+    "description2": "The clinic is very organized, appointments are punctual, and the staff is super helpful. Highly recommended.",
+    "name2": "Fatma Abdullah",
+    "description3": "I had severe tooth pain, the doctor diagnosed it immediately and treated it professionally.",
+    "name3": "Mohamed Hussein"
+  },
+  "statistics": {
+    "title": "Our Statistics",
+    "patients": "Patients Served",
+    "Number-of-doctors": "Doctors",
+    "Number-of-clinics": "Clinics",
+    "years": "Years of Experience"
+  },
+  "clinics": {
+    "title": "Clinics",
+    "mohandessin": {
+      "title": "Mohandessin Clinic",
+      "description": "Located in the heart of Mohandessin, equipped with the latest tools for dental treatment and cosmetic care.",
+      "workingHours": "Working Hours: 10 AM – 8 PM"
+    },
+    "nasrCity": {
+      "title": "Nasr City Clinic",
+      "description": "Elite doctors specializing in various dental disciplines under one roof.",
+      "workingHours": "Working Hours: 11 AM – 9 PM"
+    },
+    "sheikhZayed": {
+      "title": "Sheikh Zayed Clinic",
+      "description": "A comfortable environment with top-notch sterilization and outstanding customer service.",
+      "workingHours": "Working Hours: 9 AM – 7 PM"
+    }
+  },
+  "footer": {
+    "aboutTitle": "About the Clinic",
+    "aboutText": "We provide the best dental care using modern technologies with a special focus on your comfort.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "appointment": "Book Appointment",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "contact": "Contact Us",
+    "location": "📍 Cairo, Egypt",
+    "phone": "📞 01234567890",
+    "email": "✉️ ahmed@gmail.com",
+    "copyright": "© {{year}} Dr. Clinic - All rights reserved"
+  },
+  "navbar": {
+    "logo": "Dr. Clinic",
+    "home": "Home",
+    "appointment": "Book Appointment",
+    "dashboard": "Dashboard",
+    "login": "Login"
+  },
+  "appointmentForm": {
+    "title": "Book a New Appointment 🗓️",
+    "name": {
+      "label": "Patient Name 👤",
+      "placeholder": "Enter patient's name",
+      "error": "This field is required"
+    },
+    "phone": {
+      "label": "Phone Number 📞",
+      "placeholder": "e.g., 01012345678",
+      "error": "Phone number is required"
+    },
+    "date": {
+      "label": "Appointment Date 📅",
+      "error": "Date is required"
+    },
+    "time": {
+      "label": "Appointment Time ⏰",
+      "error": "Time is required"
+    },
+    "notes": {
+      "label": "Notes 📝",
+      "placeholder": "Any additional details about the case",
+      "error": "Notes are required"
+    },
+    "submit": "Confirm Booking 📤"
+  },
+  "login": {
+    "title": "Clinic Booking System",
+    "subtitle": "Login to your doctor account",
+    "email": {
+      "label": "Email Address",
+      "placeholder": "doctor@example.com",
+      "error": "Email is required"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "••••••••",
+      "error": "Password is required"
+    },
+    "forgot": "Forgot password?",
+    "button": "Doctor Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register now as a doctor"
+  },
+  "dashboard": {
+    "welcome": "Welcome Doctor 👨‍⚕️",
+    "logout": "Logout",
+    "latestAppointments": "Latest Appointments",
+    "viewAll": "View All",
+    "delete": "Delete",
+    "table": {
+      "patient": "Patient",
+      "date": "Date",
+      "time": "Time",
+      "actions": "Action"
+    }
+  }
+}
