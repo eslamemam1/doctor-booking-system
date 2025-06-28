@@ -37,13 +37,7 @@ export class Login {
       next: (response) => {
         console.log('Login successful', response);
         localStorage.setItem('token', response.data.token);
-
-        // Example redirect based on email
-        if (this.loginForm.value.EmailId === 'eslamemam@gmail.com') {
-          this.router.navigate(['/dashboard']);
-        } else {
-          this.router.navigate(['/']);
-        }
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.error('Login failed', error);
