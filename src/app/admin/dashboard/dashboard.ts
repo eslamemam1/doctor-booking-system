@@ -34,10 +34,11 @@ export class Dashboard implements OnInit {
 
   //
   ngOnInit(): void {
-    this.appointmentService.getAppointments().subscribe((data) => {
+    this.appointmentService.appointment$.subscribe((data) => {
       console.log(data);
       this.data = data as any[];
     });
+    this.appointmentService.loadAppointments();
   }
 
   //
