@@ -1,26 +1,30 @@
 <div class="min-h-screen pt-[80px] bg-gray-100 p-6">
   <!-- ترحيب -->
-
   <div class="container m-auto">
     <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold text-gray-800">مرحبًا دكتور 👨‍⚕️</h1>
+      <h1 class="text-2xl font-bold text-gray-800">
+        {{ 'dashboard.welcome' | translate }}
+      </h1>
       <button
         (click)="logout()"
         class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow"
       >
-        تسجيل الخروج
+        {{ 'dashboard.logout' | translate }}
       </button>
     </div>
 
     <!-- جدول آخر المواعيد -->
     <div class="bg-white p-6 rounded-lg shadow">
       <div class="flex justify-between items-center mb-4">
-        <h3 class="text-lg font-bold text-gray-700">آخر المواعيد</h3>
+        <h3 class="text-lg font-bold text-gray-700">
+          {{ 'dashboard.latestAppointments' | translate }}
+        </h3>
         <a
           routerLink="/appointments"
           class="text-blue-600 hover:underline text-sm"
-          >عرض الكل</a
         >
+          {{ 'dashboard.viewAll' | translate }}
+        </a>
       </div>
 
       <div class="overflow-x-auto">
@@ -29,23 +33,34 @@
             <tr
               class="bg-gray-50 text-left text-sm font-semibold text-gray-600"
             >
-              <th class="py-2 px-4">المريض</th>
-              <th class="py-2 px-4">التاريخ</th>
-              <th class="py-2 px-4">الوقت</th>
-              <th class="py-2 px-4">button</th>
+              <th class="py-2 px-4">
+                {{ 'dashboard.table.patient' | translate }}
+              </th>
+              <th class="py-2 px-4">
+                {{ 'dashboard.table.date' | translate }}
+              </th>
+              <th class="py-2 px-4">
+                {{ 'dashboard.table.time' | translate }}
+              </th>
+              <th class="py-2 px-4">
+                {{ 'dashboard.table.actions' | translate }}
+              </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
             <tr *ngFor="let item of data">
-              <td class="py-2 px-4">{{item.patientName}}</td>
-              <td class="py-2 px-4">{{item.appointmentDate}}</td>
-              <td class="py-2 px-4">{{item.appointmentTime}}</td>
+              <td class="py-2 px-4">{{ item.patientName }}</td>
+              <td class="py-2 px-4">{{ item.appointmentDate }}</td>
+              <td class="py-2 px-4">
+                {{ ('2025-06-28T' + item.appointmentTime) | date: 'hh:mm a' }}
+              </td>
+
               <td class="py-2 px-4">
                 <button
                   class="hover:bg-red-600 hover:text-white bg-red-500 text-white px-3 py-1 rounded"
                   (click)="delet(item)"
                 >
-                  Delete
+                  {{ 'dashboard.delete' | translate }}
                 </button>
               </td>
             </tr>

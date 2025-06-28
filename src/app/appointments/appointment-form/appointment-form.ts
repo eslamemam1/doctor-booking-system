@@ -7,10 +7,11 @@ import {
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-appointment-form',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
   templateUrl: './appointment-form.html',
   styleUrl: './appointment-form.css',
 })
@@ -31,6 +32,7 @@ export class AppointmentForm {
         'https://685dbcd87b57aebd2af6ff10.mockapi.io/appointments',
         this.submitForm.value
       )
+      // tt
       .subscribe({
         next: (response) => {
           console.log('✅ تم إرسال البيانات بنجاح:', response);

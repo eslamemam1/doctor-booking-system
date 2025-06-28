@@ -2,39 +2,45 @@ import { Router } from '@angular/router';
 import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Appointments } from '../../services/appointments';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
   router = inject(Router);
-  http = inject(HttpClient);
+  //http = inject(HttpClient);
+  appointmentService = inject(Appointments);
   data: any = [];
 
   delet(item: any) {
-    const id = item.id;
-    this.http
-      .delete<any>(
-        `https://685dbcd87b57aebd2af6ff10.mockapi.io/appointments/${id}`
-      )
-      .subscribe((response) => {
-        console.log('✅ تم الحذف بنجاح:', response);
-        // إزالة العنصر من المصفوفة المحلية بعد الحذف من السيرفر
-        this.data = this.data.filter((i: any) => i.id !== id);
-      });
+    this.appointmentService.deleteAppointment(item.id).subscribe({
+      next: (response) => {
+        console.log('Appointment deleted successfully', response);
+        // Optionally, you can remove the deleted item from the local data array
+        this.data = this.data.filter(
+          (appointment: { id: any }) => appointment.id !== item.id
+        );
+      },
+      error: (error) => {
+        console.error('Error deleting appointment', error);
+      },
+    });
   }
 
+  //
   ngOnInit(): void {
-    this.http
-      .get('https://685dbcd87b57aebd2af6ff10.mockapi.io/appointments')
-      .subscribe((data) => {
-        console.log(data);
-        this.data = data as any[];
-      });
+    this.appointmentService.getAppointments().subscribe((data) => {
+      console.log(data);
+      this.data = data as any[];
+    });
   }
+
+  //
   logout() {
     console.log('Logout clicked');
     localStorage.removeItem('token');

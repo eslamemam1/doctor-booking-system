@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -6,11 +7,12 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule, CommonModule],
   templateUrl: './home-page.html',
   styleUrls: ['./home-page.css'],
 })

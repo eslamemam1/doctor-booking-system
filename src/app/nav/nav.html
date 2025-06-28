@@ -1,12 +1,14 @@
-<!-- ✅ Navbar متجاوب -->
+<!-- ✅ Navbar متجاوب ومترجم -->
 <nav
   class="bg-white backdrop-blur-sm p-4 text-[var(--secondary)] fixed top-0 w-full z-50 shadow-md"
 >
   <div class="container mx-auto flex items-center justify-between">
-    <!-- الشعار أو اسم العيادة -->
-    <h1 class="text-lg font-bold text-[var(--secondary)]">عيادة الدكتور</h1>
+    <!-- الشعار -->
+    <h1 class="text-lg font-bold text-[var(--secondary)]">
+      {{ 'navbar.logo' | translate }}
+    </h1>
 
-    <!-- زر القائمة للموبايل -->
+    <!-- زر الموبايل -->
     <button
       class="md:hidden text-2xl focus:outline-none"
       (click)="menuOpen = !menuOpen"
@@ -14,7 +16,7 @@
       ☰
     </button>
 
-    <!-- الروابط في الشاشات الكبيرة -->
+    <!-- روابط الشاشة الكبيرة -->
     <div
       class="hidden md:flex items-center gap-6 text-sm md:text-base tajawal-extralight"
     >
@@ -22,11 +24,24 @@
         routerLink="/"
         routerLinkActive="font-bold"
         [routerLinkActiveOptions]="{ exact: true }"
-        >الصفحة الرئيسية</a
+        >{{ 'navbar.home' | translate }}</a
       >
-      <a routerLink="/appointment" routerLinkActive="font-bold">حجز موعد</a>
-      <a routerLink="/dashboard" routerLinkActive="font-bold">لوحة التحكم</a>
-      <a routerLink="/login" routerLinkActive="font-bold">تسجيل الدخول</a>
+      <a routerLink="/appointment" routerLinkActive="font-bold">
+        {{ 'navbar.appointment' | translate }}
+      </a>
+      <a routerLink="/dashboard" routerLinkActive="font-bold">
+        {{ 'navbar.dashboard' | translate }}
+      </a>
+      <a routerLink="/login" routerLinkActive="font-bold">
+        {{ 'navbar.login' | translate }}
+      </a>
+      <!-- زر تغيير اللغة -->
+      <button
+        (click)="togoleLang()"
+        class="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      >
+        {{ translate.currentLang === 'ar' ? 'English' : 'العربية' }}
+      </button>
     </div>
   </div>
 
@@ -39,10 +54,34 @@
       routerLink="/"
       routerLinkActive="font-bold"
       [routerLinkActiveOptions]="{ exact: true }"
-      >الصفحة الرئيسية</a
+      (click)="menuOpen = false"
+      >{{ 'navbar.home' | translate }}</a
     >
-    <a routerLink="/appointment" routerLinkActive="font-bold">حجز موعد</a>
-    <a routerLink="/dashboard" routerLinkActive="font-bold">لوحة التحكم</a>
-    <a routerLink="/login" routerLinkActive="font-bold">تسجيل الدخول</a>
+    <a
+      routerLink="/appointment"
+      routerLinkActive="font-bold"
+      (click)="menuOpen = false"
+      >{{ 'navbar.appointment' | translate }}</a
+    >
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="font-bold"
+      (click)="menuOpen = false"
+      >{{ 'navbar.dashboard' | translate }}</a
+    >
+    <a
+      routerLink="/login"
+      routerLinkActive="font-bold"
+      (click)="menuOpen = false"
+      >{{ 'navbar.login' | translate }}</a
+    >
+
+    <!-- زر اللغة في الموبايل -->
+    <button
+      (click)="togoleLang(); menuOpen = false"
+      class="px-4 py-1 mt-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition self-start"
+    >
+      {{ translate.currentLang === 'ar' ? 'English' : 'العربية' }}
+    </button>
   </div>
 </nav>
