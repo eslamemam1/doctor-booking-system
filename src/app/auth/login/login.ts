@@ -33,21 +33,16 @@ export class Login {
       return;
     }
 
-    this.http
-      .post<any>(
-        'https://freeapi.miniprojectideas.com/User/Login',
-        this.loginForm.value
-      )
-      .subscribe({
-        next: (response) => {
-          console.log('Login successful', response);
-          localStorage.setItem('token', response.data.token);
-          this.router.navigate(['/dashboard']);
-        },
-        error: (error) => {
-          console.error('Login failed', error);
-        },
-      });
+    this.http.post<any>('/api/User/Login', this.loginForm.value).subscribe({
+      next: (response) => {
+        console.log('Login successful', response);
+        localStorage.setItem('token', response.data.token);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+      },
+    });
 
     console.log('Form Submitted', this.loginForm.value);
   }
