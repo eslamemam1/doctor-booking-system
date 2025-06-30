@@ -1,4 +1,4 @@
-<!-- ✅ الغلاف الرئيسي مع بانر ترحيبي -->
+<!-- ✅ Main Cover with Welcome Banner -->
 <div
   class="min-h-screen relative bg-white pt-[30px]"
   style="
@@ -27,7 +27,7 @@
   </section>
 </div>
 
-<!-- ✅ الخدمات -->
+<!-- ✅ Services Section -->
 <div
   class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-[var(--primary)]"
 >
@@ -69,7 +69,7 @@
   </div>
 </div>
 
-<!-- ✅ قالوا عنا -->
+<!-- ✅ Testimonials Section -->
 <section class="py-16 px-6">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-2xl font-bold text-[var(--secondary)] mb-10">
@@ -110,7 +110,7 @@
   </div>
 </section>
 
-<!-- ✅ الإحصائيات -->
+<!-- ✅ Statistics Section -->
 <section
   #statsSection
   class="py-16 bg-[var(--primary)] text-center text-[var(--secondary)]"
@@ -146,7 +146,7 @@
   </div>
 </section>
 
-<!-- ✅ العيادات -->
+<!-- ✅ Clinics Section -->
 <section class="py-16 bg-white text-right">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-[var(--secondary)] mb-8 text-center">
@@ -205,11 +205,12 @@
   </div>
 </section>
 
-<!-- ✅ الفوتر -->
+<!-- ✅ Footer Section -->
 <footer class="bg-[var(--secondary)] text-white py-10 mt-16">
   <div
     class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right"
   >
+    <!-- About Section -->
     <div>
       <h3 class="text-lg font-bold mb-3">
         {{ 'footer.aboutTitle' | translate }}
@@ -218,6 +219,7 @@
         {{ 'footer.aboutText' | translate }}
       </p>
     </div>
+    <!-- Quick Links -->
     <div>
       <h3 class="text-lg font-bold mb-3">
         {{ 'footer.quickLinks' | translate }}
@@ -245,6 +247,7 @@
         </li>
       </ul>
     </div>
+    <!-- Contact Info -->
     <div>
       <h3 class="text-lg font-bold mb-3">{{ 'footer.contact' | translate }}</h3>
       <p class="text-sm text-[var(--primary)]">
@@ -258,6 +261,8 @@
       </p>
     </div>
   </div>
+
+  <!-- Copyright -->
   <div class="mt-10 text-center text-[var(--primary)] text-sm">
     {{ 'footer.copyright' | translate:{ year: currentYear } }}
   </div>

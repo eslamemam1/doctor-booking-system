@@ -6,14 +6,14 @@
     background-position: center;
   "
 >
-  <!-- طبقة غامقة -->
+  <!-- Dark Overlay Layer -->
   <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
 
-  <!-- صندوق تسجيل الدخول -->
+  <!-- Login Box -->
   <div
     class="relative z-10 w-full max-w-md bg-white/80 shadow-2xl rounded-xl p-8 border border-blue-200 backdrop-blur-sm"
   >
-    <!-- الشعار -->
+    <!-- Logo and Title -->
     <div class="flex flex-col items-center mb-6">
       <img src="medical-report.png" alt="Doctor Logo" class="w-16 h-16 mb-2" />
       <h1 class="text-2xl font-extrabold text-[#133E85]">
@@ -25,7 +25,7 @@
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-5">
-      <!-- البريد الإلكتروني -->
+      <!-- Email Input -->
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
           {{ 'login.email.label' | translate }}
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <!-- كلمة المرور -->
+      <!-- Password Input -->
       <div>
         <label
           for="password"
@@ -66,6 +66,7 @@
         >
           {{ 'login.password.error' | translate }}
         </div>
+        <!-- Forgot Password Link -->
         <div class="text-right mt-2">
           <a href="#" class="text-sm text-[#133E85] hover:underline">
             {{ 'login.forgot' | translate }}
@@ -73,7 +74,7 @@
         </div>
       </div>
 
-      <!-- زر الدخول -->
+      <!-- Login Button -->
       <button
         type="submit"
         class="w-full bg-[#133E85] text-white font-semibold py-2 rounded-lg hover:bg-blue-800 transition duration-200"
@@ -81,13 +82,13 @@
         {{ 'login.button' | translate }}
       </button>
 
-      <!-- خطأ عام -->
+      <!-- General Error Message -->
       <div *ngIf="error" class="text-red-600 text-center text-sm mt-3">
         {{ error }}
       </div>
     </form>
 
-    <!-- التسجيل -->
+    <!-- Registration Prompt -->
     <p class="text-center text-sm text-gray-600 mt-6">
       {{ 'login.noAccount' | translate }}
       <a routerLink="/register" class="text-[#133E85] hover:underline">
