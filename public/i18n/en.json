@@ -63,7 +63,8 @@
     "home": "Home",
     "appointment": "Book Appointment",
     "dashboard": "Dashboard",
-    "login": "Login"
+    "login": "Login",
+    "appointmentsList": "Appointments List"
   },
   "appointmentForm": {
     "title": "Book a New Appointment 🗓️",
@@ -88,7 +89,8 @@
     "notes": {
       "label": "Notes 📝",
       "placeholder": "Any additional details about the case",
-      "error": "Notes are required"
+      "error": "Notes are required",
+      "empty": "No notes provided."
     },
     "submit": "Confirm Booking 📤"
   },
@@ -120,7 +122,16 @@
       "patient": "Patient",
       "date": "Date",
       "time": "Time",
-      "actions": "Action"
+      "actions": "Action",
+      "phone": "Phone",
+      "notes": "Notes",
+      "status": "Status",
+      "statusConfirme": "Confirme",
+      "statusCancele": "Cancel"
     }
+  },
+  "appointmentList": {
+    "title": "Appointments List",
+    "empty": "No appointments available."
   }
 }
