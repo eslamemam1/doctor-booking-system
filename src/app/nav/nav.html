@@ -12,6 +12,7 @@
     <button
       class="md:hidden text-2xl focus:outline-none"
       (click)="menuOpen = !menuOpen"
+      aria-label="Toggle menu"
     >
       ☰
     </button>
@@ -24,8 +25,9 @@
         routerLink="/"
         routerLinkActive="font-bold"
         [routerLinkActiveOptions]="{ exact: true }"
-        >{{ 'navbar.home' | translate }}</a
       >
+        {{ 'navbar.home' | translate }}
+      </a>
       <a routerLink="/appointment" routerLinkActive="font-bold">
         {{ 'navbar.appointment' | translate }}
       </a>
@@ -34,6 +36,9 @@
       </a>
       <a routerLink="/login" routerLinkActive="font-bold">
         {{ 'navbar.login' | translate }}
+      </a>
+      <a routerLink="/appointments-list" routerLinkActive="font-bold">
+        {{ 'navbar.appointmentsList' | translate }}
       </a>
 
       <!-- Language Switch Button -->
@@ -56,26 +61,37 @@
       routerLinkActive="font-bold"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="menuOpen = false"
-      >{{ 'navbar.home' | translate }}</a
     >
+      {{ 'navbar.home' | translate }}
+    </a>
     <a
       routerLink="/appointment"
       routerLinkActive="font-bold"
       (click)="menuOpen = false"
-      >{{ 'navbar.appointment' | translate }}</a
     >
+      {{ 'navbar.appointment' | translate }}
+    </a>
     <a
       routerLink="/dashboard"
       routerLinkActive="font-bold"
       (click)="menuOpen = false"
-      >{{ 'navbar.dashboard' | translate }}</a
     >
+      {{ 'navbar.dashboard' | translate }}
+    </a>
     <a
       routerLink="/login"
       routerLinkActive="font-bold"
       (click)="menuOpen = false"
-      >{{ 'navbar.login' | translate }}</a
     >
+      {{ 'navbar.login' | translate }}
+    </a>
+    <a
+      routerLink="/appointments-list"
+      routerLinkActive="font-bold"
+      (click)="menuOpen = false"
+    >
+      {{ 'navbar.appointmentsList' | translate }}
+    </a>
 
     <!-- Language Switch Button for Mobile -->
     <button
