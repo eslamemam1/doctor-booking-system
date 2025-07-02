@@ -20,6 +20,10 @@ export class Appointments {
     return this.http.delete<any>(`${this.url}/${id}`);
   }
 
+  updateAppointmentStatus(id: string, status: string): Observable<any> {
+    return this.http.put<any>(`${this.url}/${id}`, { status });
+  }
+
   //getAppointments(): Observable<any> {
   //  return this.http.get<any>(this.url);
   //}

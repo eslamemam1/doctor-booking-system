@@ -2,61 +2,37 @@
   class="max-w-4xl mx-auto mt-[100px] bg-white shadow-xl rounded-2xl p-8 border border-blue-100"
 >
   <!-- Appointments List Title -->
-  <h2 class="text-3xl font-extrabold text-[var(--secondary)] mb-8 text-center">
+  <h2 class="text-3xl font-extrabold text-[var(--secondary)] mb-10 text-center">
     {{ 'appointmentList.title' | translate }}
   </h2>
 
   <!-- Appointments List -->
-  <div *ngIf="appointments.length > 0; else noAppointments" class="space-y-6">
+  <div
+    *ngIf="appointmentSignals.Appointments().length > 0; else noAppointments"
+    class="space-y-6"
+  >
     <div
-      *ngFor="let appointment of appointments"
-      class="border border-blue-100 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-200"
+      *ngFor="let appointment of appointmentSignals.Appointments()"
+      class="border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition duration-300 p-6 bg-white"
     >
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
-        <!-- Patient Info -->
-        <div>
-          <span class="font-semibold">
-            {{ 'appointmentForm.name.label' | translate }}:
-          </span>
-          {{ appointment.patientName }}
-        </div>
-
-        <div>
-          <span class="font-semibold">
-            {{ 'appointmentForm.phone.label' | translate }}:
-          </span>
-          {{ appointment.phoneNumber }}
-        </div>
-
-        <!-- Date and Time -->
-        <div>
-          <span class="font-semibold">
-            {{ 'appointmentForm.date.label' | translate }}:
-          </span>
-          {{ appointment.appointmentDate }}
-        </div>
-
-        <div>
-          <span class="font-semibold">
-            {{ 'appointmentForm.time.label' | translate }}:
-          </span>
-          {{ appointment.appointmentTime }}
-        </div>
-
-        <!-- Notes -->
-        <div class="sm:col-span-2">
-          <span class="font-semibold">
-            {{ 'appointmentForm.notes.label' | translate }}:
-          </span>
-          {{ appointment.notes || ('appointmentForm.notes.empty' | translate) }}
-        </div>
+      <!-- Appointment Card -->
+      <div
+        class="flex flex-col sm:flex-row justify-between items-start sm:items-center"
+      >
+        <h3 class="text-lg font-semibold text-blue-700 flex items-center gap-2">
+          👤 {{ appointment.patientName }}
+        </h3>
+        <p class="text-sm text-gray-500">
+          📅 {{ appointment.appointmentDate }} &nbsp; ⏰ {{
+          appointment.appointmentTime }}
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- No Appointments Placeholder -->
+  <!-- No Appointments Message -->
   <ng-template #noAppointments>
-    <p class="text-center text-gray-500">
+    <p class="text-center text-gray-400 text-lg mt-10">
       {{ 'appointmentList.empty' | translate }}
     </p>
   </ng-template>

@@ -47,4 +47,34 @@ export class Dashboard implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
+
+  updateAppointmentStatus(appointment: any) {
+    this.appointmentService
+      .updateAppointmentStatus(appointment.id, 'confirmed')
+      .subscribe({
+        next: (updated) => {
+          appointment.status = updated.status;
+          console.log('Appointment confirmed:', updated);
+          this.appointmentService.loadAppointments(); // تحدث باقي الواجهات
+        },
+        error: (err) => {
+          console.error('Error confirming appointment:', err);
+        },
+      });
+  }
+
+  cancelAppointment(appointment: any) {
+    this.appointmentService
+      .updateAppointmentStatus(appointment.id, 'cancelled')
+      .subscribe({
+        next: (updated) => {
+          appointment.status = updated.status;
+          console.log('Appointment cancelled:', updated);
+          this.appointmentService.loadAppointments(); // تحدث باقي الواجهات
+        },
+        error: (err) => {
+          console.error('Error cancelling appointment:', err);
+        },
+      });
+  }
 }
