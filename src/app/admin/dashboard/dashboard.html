@@ -84,19 +84,19 @@
               </td>
               <td class="py-3 px-4 text-center space-y-1">
                 <button
-                  class="w-full bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md shadow transition"
+                  class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md shadow transition"
                   (click)="delet(item)"
                 >
                   {{ 'dashboard.delete' | translate }}
                 </button>
                 <button
-                  class="w-full bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md shadow transition"
+                  class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 mx-3 rounded-md shadow transition"
                   (click)="updateAppointmentStatus(item)"
                 >
                   {{ 'dashboard.table.statusConfirme' | translate }}
                 </button>
                 <button
-                  class="w-full bg-gray-400 hover:bg-gray-500 text-white px-3 py-1 rounded-md shadow transition"
+                  class="bg-gray-400 hover:bg-gray-500 text-white px-3 py-1 rounded-md shadow transition"
                   (click)="cancelAppointment(item)"
                 >
                   {{ 'dashboard.table.statusCancele' | translate }}
