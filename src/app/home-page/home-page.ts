@@ -22,7 +22,6 @@ export class HomePage implements OnInit, AfterViewInit {
   clinicCount = 0;
   experienceCount = 0;
 
-  // في نفس كومبوننت الصفحة
   currentYear = new Date().getFullYear();
 
   private observer!: IntersectionObserver;
@@ -56,7 +55,6 @@ export class HomePage implements OnInit, AfterViewInit {
     this.animateCount('experienceCount', 30, 1000);
   }
 
-  // 👇 هذه الطريقة تم تعديلها لتعمل بشكل سليم
   animateCount(
     property:
       | 'patientCount'
